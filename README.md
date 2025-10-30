@@ -45,7 +45,7 @@ Follow these instructions to get the project running on your local machine.
 
 2.  **Navigate to the project directory:**
     ```bash
-    cd book-It-frontend
+    cd book-It_frontend
     ```
 
 3.  **Install all dependencies:**
