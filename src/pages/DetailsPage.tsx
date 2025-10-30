@@ -52,8 +52,8 @@ export const DetailsPage = () => {
         setError(null);
 
         const [detailsRes, availabilityRes] = await Promise.all([
-          axios.get(`http://localhost:4000/experiences/${id}`),
-          axios.get(`http://localhost:4000/experiences/${id}/availability`)
+            axios.get(`${import.meta.env.VITE_API_BASE_URL}/experiences/${id}`),
+            axios.get(`${import.meta.env.VITE_API_BASE_URL}/experiences/${id}/availability`)
         ]);
 
         setExperience(detailsRes.data);
