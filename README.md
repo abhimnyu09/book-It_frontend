@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# 🚀 BookIt: Experiences (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the **BookIt** application, a fullstack project built for a technical assignment. It's a React-based web app that allows users to browse and book travel experiences.
 
-Currently, two official plugins are available:
+This application is built with React (using Vite), TypeScript, and TailwindCSS. It fetches all its data from the [BookIt Backend API](https://github.com/abhimnyu09/book-It_backend) .
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+* **Browse Experiences:** Fetches and displays a grid of all available experiences.
+* **Dynamic Search:** A global search bar in the header filters experiences by title in real-time.
+* **Detailed View:** Click any experience to see a detailed page with a full description, image, and "About" section.
+* **Real-time Availability:** The Details Page fetches real-time booking data. If a slot is already booked, it's visibly disabled and marked as "Booked".
+* **Interactive Booking:** Users can select a date, time, and quantity. The price summary updates dynamically.
+* **Promo Codes:** A user can apply a promo code (`SAVE10`, `FLAT100`) which is validated by the backend and applied to the final price.
+* **Form Validation:** The checkout form validates that all user information (name, email, terms agreement) is filled out before allowing a booking.
+* **End-to-End Flow:** Complete user flow from Home -> Details -> Checkout -> Confirmation.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Tech Stack
 
-## Expanding the ESLint configuration
+* **Framework:** React 18
+* **Bundler:** Vite
+* **Language:** TypeScript
+* **Styling:** TailwindCSS
+* **Routing:** React Router DOM v6
+* **Data Fetching:** Axios
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🔧 How to Run Locally
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Follow these instructions to get the project running on your local machine.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* Node.js (v18.x or higher)
+* npm
+* The **`booklt-backend` server must be running** locally on `http://localhost:4000`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Setup and Run
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/abhimnyu09/book-It_frontend
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd book-It-frontend
+    ```
+
+3.  **Install all dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+5.  Open your browser and navigate to **`http://localhost:5173`** (or the URL shown in your terminal).
