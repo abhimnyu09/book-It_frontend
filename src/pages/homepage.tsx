@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ExperienceCard } from '../components/ExperienceCard';
 import { useSearch } from '../context/SearchContext'; // 1. Import our hook
