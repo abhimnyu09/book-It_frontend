@@ -45,7 +45,7 @@ export const CheckoutPage = () => {
   const handleApplyPromo = async () => {
     if (!promoCode) return;
     try {
-      const response = await axios.post('http://localhost:4000/promo/validate', {
+        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/promo/validate`, {
         promoCode: promoCode,
       });
       
@@ -125,7 +125,7 @@ export const CheckoutPage = () => {
 
     // --- Call Backend Booking Endpoint ---
     try {
-      const response = await axios.post('http://localhost:4000/bookings', bookingData);
+        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/bookings`, bookingData);
       const { bookingId } = response.data;
       
       navigate('/result', { state: { refId: bookingId } });
