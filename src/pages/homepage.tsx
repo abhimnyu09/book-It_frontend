@@ -26,7 +26,7 @@ export const HomePage = () => {
     const fetchExperiences = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:4000/experiences');
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/experiences`);
         setAllExperiences(response.data);
         setError(null);
       } catch (err) {
