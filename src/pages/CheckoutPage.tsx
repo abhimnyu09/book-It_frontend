@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation, Navigate, Link } from 'react-router-dom';
+import { useNavigate, useLocation, Navigate} from 'react-router-dom';
 import axios from 'axios';
 
 // Define the types for our discount state
